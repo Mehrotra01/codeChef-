@@ -1,0 +1,37 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc= new Scanner(System.in);
+		int t= sc.nextInt();
+		for(int i=0;i<t;i++){
+		    int maxT = sc.nextInt();
+		    int maxN = sc.nextInt();
+		    int sumN = sc.nextInt();
+		    int n = maxN;
+		    int nSquare = (int)Math.pow(maxN,2);
+		    int tCount=1;
+		    while(maxN<=sumN && tCount<maxT){
+		        if(sumN-maxN<n){
+		            nSquare+= ((int)Math.pow((sumN-maxN),2)); // next term in the squence
+		            maxN+=(sumN-maxN);  //updating the value of maxN for next iteration
+		            tCount++;//updating the value of t for next iteration
+		        }else{
+		            nSquare+= ((int)Math.pow(n,2)); // next term in the squence
+		            maxN+=n;    //updating the value of maxN for next iteration
+		            tCount++;   //updating the value of t for next iteration
+		            
+		        }
+		    }
+		    System.out.println(nSquare);
+		}
+	}
+}
