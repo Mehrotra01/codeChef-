@@ -1,0 +1,28 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for (int i = 0; i < t; i++) {
+            int need = sc.nextInt();
+            int contains = sc.nextInt();
+            int res = (int) Math.ceil((need - contains) / 4);
+            if (need <= contains) {
+                System.out.println("0");
+            } else if((need - contains)%4==0){
+                System.out.println(res);
+            }else{
+                System.out.println(res+1);
+            }
+		}
+	}
+}
