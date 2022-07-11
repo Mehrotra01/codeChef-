@@ -1,0 +1,33 @@
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc= new Scanner(System.in);
+		int t = sc.nextInt();
+		for(int i=0;i<t;i++){
+		    int n =sc.nextInt();
+		    int[] arr = new int[n];
+		    int count=0;
+		    int min = Integer.MAX_VALUE;  
+		    
+		    for(int j=0;j<n;j++){
+		        arr[j]=sc.nextInt();
+		        if(arr[j]%2!=0){ // getting odd piles 
+		            count++;
+               if(arr[j] <min)  
+                   min = arr[j];  // minimum in all the piles
+		        }
+		    }
+		    
+            if(min == 1){
+                System.out.println("CHEF");
+            }else if(count%2==0){
+                System.out.println("CHEFINA");
+            }else{
+                System.out.println("CHEF");
+            }
+        
+		}
+	}
+}
